@@ -7,5 +7,5 @@
   <description>
     <p>QGnomePlatform is a Qt Platform Theme aimed at making Qt applications fit into a GNOME environment by reusing as many GNOME settings as it can, without changing any of them.</p>
   </description>
-  <url type="homepage">https://github.com/MartinBriza/QGnomePlatform</url>
+  <url type="homepage">https://github.com/FedoraQt/QGnomePlatform</url>
 </component>
