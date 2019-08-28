@@ -15,7 +15,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FedoraQt/QGnomePlatform.git",
-                    "branch": "727eeb0487a8d73f2ea4639b3c08eb08a492eced"
+                    "branch": "8270d9b96e053c0dd1e82ca4152cc0242ab158bf"
                 },
                 {
                     "type": "shell",
