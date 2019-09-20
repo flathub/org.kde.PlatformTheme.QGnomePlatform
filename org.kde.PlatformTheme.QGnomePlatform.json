@@ -20,8 +20,7 @@
                 {
                     "type": "shell",
                     "commands": [
-                        "sed -i 's@\$\$\\[QT_INSTALL_PLUGINS\\]@/usr/share/runtime/lib/plugins/QGnomePlatform@' theme/theme.pro",
-                        "sed -i 's@SUBDIRS += common decoration theme@SUBDIRS += common theme@' qgnomeplatform.pro"
+                        "sed -i 's@\$\$\\[QT_INSTALL_PLUGINS\\]@/usr/share/runtime/lib/plugins/QGnomePlatform@' theme/theme.pro; sed -i 's@SUBDIRS += common decoration theme@SUBDIRS += common theme@' qgnomeplatform.pro"
                     ]
                 }
             ]
