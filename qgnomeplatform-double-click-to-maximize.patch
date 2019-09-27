@@ -1,0 +1,68 @@
+diff --git a/decoration/qgnomeplatformdecoration.cpp b/decoration/qgnomeplatformdecoration.cpp
+index 107d2c3..3da478f 100644
+--- a/decoration/qgnomeplatformdecoration.cpp
++++ b/decoration/qgnomeplatformdecoration.cpp
+@@ -102,6 +102,8 @@ QGnomePlatformDecoration::QGnomePlatformDecoration()
+     initializeButtonPixmaps();
+     initializeColors();
+ 
++    m_lastButtonClick = QDateTime::currentDateTime();
++
+     QTextOption option(Qt::AlignHCenter | Qt::AlignVCenter);
+     option.setWrapMode(QTextOption::NoWrap);
+     m_windowTitle.setTextOption(option);
+@@ -411,6 +413,8 @@ void QGnomePlatformDecoration::processMouseTop(QWaylandInputDevice *inputDevice,
+ {
+     Q_UNUSED(mods);
+ 
++    QDateTime currentDateTime = QDateTime::currentDateTime();
++
+     if (!closeButtonRect().contains(local) && !maximizeButtonRect().contains(local) && !minimizeButtonRect().contains(local)) {
+         updateButtonHoverState(Button::None);
+     }
+@@ -452,10 +456,20 @@ void QGnomePlatformDecoration::processMouseTop(QWaylandInputDevice *inputDevice,
+         if (clickButton(b, Minimize))
+             window()->setWindowState(Qt::WindowMinimized);
+     } else {
++        if (clickButton(b, Maximize)) {
++            const int doubleClickDistance = m_hints->hint(QPlatformTheme::MouseDoubleClickDistance).toInt();
++            QPointF posDiff = m_lastButtonClickPosition - local;
++            if ((m_lastButtonClick.msecsTo(currentDateTime) <= m_hints->hint(QPlatformTheme::MouseDoubleClickInterval).toInt()) &&
++                ((posDiff.x() <= doubleClickDistance && posDiff.x() >= -doubleClickDistance) && ((posDiff.y() <= doubleClickDistance && posDiff.y() >= -doubleClickDistance))))
++                window()->setWindowStates(window()->windowStates() ^ Qt::WindowMaximized);
++            m_lastButtonClick = currentDateTime;
++            m_lastButtonClickPosition = local;
++        } else {
+ #if QT_CONFIG(cursor)
+-        waylandWindow()->restoreMouseCursor(inputDevice);
++            waylandWindow()->restoreMouseCursor(inputDevice);
+ #endif
+-        startMove(inputDevice,b);
++            startMove(inputDevice,b);
++        }
+     }
+ }
+ 
+diff --git a/decoration/qgnomeplatformdecoration.h b/decoration/qgnomeplatformdecoration.h
+index 600e082..cb5904b 100644
+--- a/decoration/qgnomeplatformdecoration.h
++++ b/decoration/qgnomeplatformdecoration.h
+@@ -22,6 +22,8 @@
+ 
+ #include <QtWaylandClient/private/qwaylandabstractdecoration_p.h>
+ 
++#include <QDateTime>
++
+ class GnomeHintsSettings;
+ class QPixmap;
+ 
+@@ -77,6 +79,9 @@ private:
+     bool m_maximizeButtonHovered;
+     bool m_minimizeButtonHovered;
+ 
++    // For double-click support
++    QDateTime m_lastButtonClick;
++    QPointF m_lastButtonClickPosition;
+ 
+     QStaticText m_windowTitle;
+     Button m_clicking = None;

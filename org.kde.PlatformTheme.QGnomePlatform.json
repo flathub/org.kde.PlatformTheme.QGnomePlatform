@@ -18,6 +18,14 @@
                     "branch": "8270d9b96e053c0dd1e82ca4152cc0242ab158bf"
                 },
                 {
+                    "type": "patch",
+                    "path": "qgnomeplatform-double-click-to-maximize.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "qgnomeplatform-cursor-only-on-wayland.patch"
+                },
+                {
                     "type": "shell",
                     "commands": [
                         "sed -i 's@\$\$\\[QT_INSTALL_PLUGINS\\]@/usr/share/runtime/lib/plugins/QGnomePlatform@' theme/theme.pro; sed -i 's@SUBDIRS += common decoration theme@SUBDIRS += common theme@' qgnomeplatform.pro"
