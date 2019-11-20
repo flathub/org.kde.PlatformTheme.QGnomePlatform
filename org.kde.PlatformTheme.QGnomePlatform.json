@@ -7,31 +7,21 @@
     "runtime-version": "5.9",
     "appstream-compose": false,
     "separate-locales": false,
-    "build-options" : {
-        "prefix": "/usr/share/runtime/lib/plugins/QGnomePlatform",
-        "env": {
-            "PATH": "/usr/share/runtime/lib/plugins/QGnomePlatform/bin:/usr/bin:/app/bin:/bin"
-        }
-    },
     "modules": [
         {
             "name": "qgnomeplatform",
+            "buildsystem": "qmake",
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.5.tar.gz",
-                    "sha256": "b835b700625ff5fe4eb6c6cc1ddcd333b6e6a32d3cc5e52b82046226b2d9b6ca"
+                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.6.0.tar.gz",
+                    "sha256": "5e734d18adbec9ac3c0aaaccc7d995d54236f38585019d7ff67a209f8161e7d7"
                 },
                 {
                     "type": "shell",
                     "commands": [
-                        "sed -i 's@\$\$\\[QT_INSTALL_PLUGINS\\]@/usr/share/runtime/lib/plugins/QGnomePlatform@' qgnomeplatform.pro"
+                        "sed -i 's@\$\$\\[QT_INSTALL_PLUGINS\\]@/usr/share/runtime/lib/plugins/QGnomePlatform@' theme/theme.pro; sed -i 's@SUBDIRS += common decoration theme@SUBDIRS += common theme@' qgnomeplatform.pro"
                     ]
-                },
-                {
-                    "type": "script",
-                    "commands": [ "qmake INCLUDEPATH=/usr/share/runtime/lib/plugins/QGnomePlatform/include/"],
-                    "dest-filename": "configure"
                 }
             ]
         },
