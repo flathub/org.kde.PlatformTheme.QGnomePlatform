@@ -13,9 +13,9 @@
             "buildsystem": "qmake",
             "sources": [
                 {
-                    "type": "git",
-                    "url": "https://github.com/FedoraQt/QGnomePlatform",
-                    "branch": "c02f04be227739a096f1bfd87c1fa080e9227b1f"
+                    "type": "archive",
+                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.6.90.tar.gz",
+                    "sha256": "780a5880319794841f267b06f11fc177ef5ceb67d8a3f4700a96a11a7b26b251"
                 },
                 {
                     "type": "shell",
