@@ -16,7 +16,7 @@
                     "type": "archive",
                     "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
                     "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
-                }
+                },
                 {
                     "type": "shell",
                     "commands": [
