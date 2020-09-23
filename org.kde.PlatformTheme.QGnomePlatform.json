@@ -7,9 +7,6 @@
     "runtime-version": "5.15",
     "appstream-compose": false,
     "separate-locales": false,
-    "finish-args": [
-        "--env=LD_LIBRARY_PATH=/usr/share/runtime/lib/plugins/QGnomePlatform/lib/"
-    ],
     "modules": [
         {
             "name": "Adwaita-qt",
