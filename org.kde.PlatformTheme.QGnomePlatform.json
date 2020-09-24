@@ -9,13 +9,36 @@
     "separate-locales": false,
     "modules": [
         {
-            "name": "qgnomeplatform",
-            "buildsystem": "qmake",
+            "name": "Adwaita-qt",
+            "buildsystem": "cmake",
+            "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform"],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.6.1.tar.gz",
-                    "sha256": "b2630b56bd1d2798f5403a74ec53df694a91f239742f0086f3d565e28bc3382a"
+                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
+                    "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "sed -i 's@add_subdirectory(style)@#add_subdirectory(style)@' src/CMakeLists.txt"
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "qgnomeplatform",
+            "buildsystem": "qmake",
+            "build-options" : {
+                "env": {
+                    "PKG_CONFIG_PATH": "/usr/share/runtime/lib/plugins/QGnomePlatform/lib/pkgconfig"
+                }
+            },
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.6.90.tar.gz",
+                    "sha256": "780a5880319794841f267b06f11fc177ef5ceb67d8a3f4700a96a11a7b26b251"
                 },
                 {
                     "type": "shell",
