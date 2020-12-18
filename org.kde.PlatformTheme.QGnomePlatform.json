@@ -15,8 +15,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.1.90.tar.gz",
-                    "sha256": "6348fad757557cf3c595ecead6fd8235d59bca63f1f4ace5d7b6d3777d77b682"
+                    "url": "https://github.com/FedoraQt/adwaita-qt/archive/1.2.0.tar.gz",
+                    "sha256": "5698025e1fe3479397516e504c20943611afe040c89dca6531c309fd4198cc6b"
                 },
                 {
                     "type": "shell",
@@ -37,8 +37,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.6.90.tar.gz",
-                    "sha256": "780a5880319794841f267b06f11fc177ef5ceb67d8a3f4700a96a11a7b26b251"
+                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/0.7.0.tar.gz",
+                    "sha256": "ba329f67bdc0a0d8fc13d61d7828ee7c3fcb8ec6caa71e0b38c66da7eca88fc7"
                 },
                 {
                     "type": "shell",
