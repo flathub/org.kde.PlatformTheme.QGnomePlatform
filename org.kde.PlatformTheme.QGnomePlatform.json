@@ -1,17 +1,18 @@
 {
     "id": "org.kde.PlatformTheme.QGnomePlatform",
-    "branch": "5.15-21.08",
+    "branch": "6.2",
     "runtime": "org.kde.Platform",
     "build-extension": true,
     "sdk": "org.kde.Sdk",
-    "runtime-version": "5.15-21.08",
+    "runtime-version": "6.2",
     "appstream-compose": false,
     "separate-locales": false,
     "modules": [
         {
             "name": "Adwaita-qt",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform"],
+            "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform",
+                            "-DUSE_QT6=ON"],
             "sources": [
                 {
                     "type": "archive",
@@ -31,7 +32,8 @@
             "buildsystem": "cmake-ninja",
             "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform",
                             "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/QGnomePlatform",
-                            "-DDISABLE_DECORATION_SUPPORT=true"],
+                            "-DDISABLE_DECORATION_SUPPORT=true",
+                            "-DUSE_QT6=ON"],
             "sources": [
                 {
                     "type": "archive",
