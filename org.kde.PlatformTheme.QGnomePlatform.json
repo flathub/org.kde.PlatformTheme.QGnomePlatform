@@ -36,9 +36,8 @@
                             "-DUSE_QT6=ON"],
             "sources": [
                 {
-                    "type": "archive",
-                    "url": "https://github.com/FedoraQt/QGnomePlatform/archive/refs/tags/0.8.4.tar.gz",
-                    "sha256": "c648331f47b095d90594fc986a6c0bc885b846e0e9f5c10b6a1ba6a58d004686"
+                    "type": "git",
+                    "branch": "1a801592c677873135b38db5b3e273b9ebb0e298",
                 },
                 {
                     "type": "patch",
