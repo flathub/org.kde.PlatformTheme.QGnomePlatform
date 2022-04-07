@@ -37,7 +37,8 @@
             "sources": [
                 {
                     "type": "git",
-                    "branch": "1a801592c677873135b38db5b3e273b9ebb0e298",
+                    "url": "https://github.com/FedoraQt/QGnomePlatform.git",
+                    "commit": "1a801592c677873135b38db5b3e273b9ebb0e298"
                 },
                 {
                     "type": "patch",
