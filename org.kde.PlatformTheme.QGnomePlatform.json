@@ -11,7 +11,9 @@
         {
             "name": "Adwaita-qt",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform"],
+            "config-opts": [
+                "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform"
+            ],
             "sources": [
                 {
                     "type": "archive",
@@ -29,9 +31,11 @@
         {
             "name": "qgnomeplatform",
             "buildsystem": "cmake-ninja",
-            "config-opts": ["-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform",
-                            "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/QGnomePlatform",
-                            "-DDISABLE_DECORATION_SUPPORT=true"],
+            "config-opts": [
+                "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/QGnomePlatform",
+                "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/QGnomePlatform",
+                "-DDISABLE_DECORATION_SUPPORT=true"
+            ],
             "sources": [
                 {
                     "type": "archive",
