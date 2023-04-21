@@ -45,6 +45,10 @@
                 {
                     "type": "patch",
                     "path": "qgnomeplatform-adwaita-include-dirs.patch"
+                },
+                {
+                    "type": "patch",
+                    "path": "qgnomeplatform-add-support-for-kcolorscheme-using-adwaita-like-color-schemes.patch"
                 }
             ]
         },
