@@ -38,7 +38,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/FedoraQt/QGnomePlatform.git",
-                    "tag": "0.9.1"
+                    "commit": "727ddf252bf08a7b460a844bcbe0b4cbad232b1e"
                 },
                 {
                     "type": "patch",
