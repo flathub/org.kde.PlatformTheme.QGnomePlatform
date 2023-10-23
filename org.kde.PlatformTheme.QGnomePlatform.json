@@ -1,10 +1,10 @@
 {
     "id": "org.kde.PlatformTheme.QGnomePlatform",
-    "branch": "5.15-22.08",
+    "branch": "5.15-23.08",
     "runtime": "org.kde.Platform",
     "build-extension": true,
     "sdk": "org.kde.Sdk",
-    "runtime-version": "5.15-22.08",
+    "runtime-version": "5.15-23.08",
     "appstream-compose": false,
     "separate-locales": false,
     "modules": [
