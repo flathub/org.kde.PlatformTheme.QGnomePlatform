@@ -1,11 +1,10 @@
 {
     "id": "org.kde.PlatformTheme.QGnomePlatform",
-    "branch": "5.15-23.08",
+    "branch": "5.15-24.08",
     "runtime": "org.kde.Platform",
     "build-extension": true,
     "sdk": "org.kde.Sdk",
-    "runtime-version": "5.15-23.08",
-    "appstream-compose": false,
+    "runtime-version": "5.15-24.08",
     "separate-locales": false,
     "modules": [
         {
@@ -54,7 +53,6 @@
             "build-commands": [
                 "mkdir -p ${FLATPAK_DEST}/share/appdata",
                 "cp org.kde.PlatformTheme.QGnomePlatform.appdata.xml ${FLATPAK_DEST}/share/appdata",
-                "appstream-compose --basename=org.kde.PlatformTheme.QGnomePlatform --prefix=${FLATPAK_DEST} --origin=flatpak org.kde.PlatformTheme.QGnomePlatform"
             ],
             "sources": [
                 {
