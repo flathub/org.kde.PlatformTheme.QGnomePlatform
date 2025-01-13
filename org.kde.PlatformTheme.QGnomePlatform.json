@@ -52,7 +52,7 @@
             "buildsystem": "simple",
             "build-commands": [
                 "mkdir -p ${FLATPAK_DEST}/share/appdata",
-                "cp org.kde.PlatformTheme.QGnomePlatform.appdata.xml ${FLATPAK_DEST}/share/appdata",
+                "cp org.kde.PlatformTheme.QGnomePlatform.appdata.xml ${FLATPAK_DEST}/share/appdata"
             ],
             "sources": [
                 {
